@@ -147,11 +147,12 @@
 
   /* pane */
   .cnv_type_pane {
-    & {
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    &.cnv_content_push {
+      position: initial;
     }
     & .cnv__card.cnv__card_type_banner {
       margin: 0 !important;
