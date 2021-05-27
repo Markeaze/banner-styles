@@ -232,17 +232,7 @@
   .cnv_type_built-in {
     position: initial;
     & .cnv__close {
-      top: 0;
-    }
-    &.cnv_close-align_left .cnv__close {
-      left: 0;
-    }
-    &.cnv_close-align_center .cnv__close {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &.cnv_close-align_right .cnv__close {
-      right: 0;
+      display: none;
     }
     & .cnv__card.cnv__card_type_banner {
       margin: 0 !important;
