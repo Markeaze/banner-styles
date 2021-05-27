@@ -1,0 +1,144 @@
+#cnv {
+  /* * {
+  all: initial
+} */
+  .cnv {
+    position: fixed;
+    z-index: 99999;
+  }
+  .cnv__overlay {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  .cnv__card {
+    position: relative;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  .cnv__close {
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform ease-in-out 150ms;
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+
+  .cnv-display-mobile {
+    display: none;
+  }
+
+  .cnv-button {
+    transition: filter 120ms ease-in-out;
+  }
+  .cnv-button:hover {
+    filter: brightness(0.92);
+  }
+
+  .cnv-checkbox {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+  }
+  .cnv-checkbox__icon {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    border: 1px solid #333333;
+    box-sizing: border-box;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cnv-checkbox__icon_active_yes {
+    display: none;
+  }
+  .cnv-checkbox__input {
+    position: absolute;
+    margin: 2px;
+    opacity: 0;
+    z-index: -1;
+  }
+  .cnv-checkbox__input:checked + .cnv-checkbox__button .cnv-checkbox__icon {
+    display: none;
+  }
+  .cnv-checkbox__input:checked
+    + .cnv-checkbox__button
+    .cnv-checkbox__icon_active_yes {
+    display: flex;
+  }
+  .cnv-checkbox__icon-inner {
+    width: 9px;
+    height: 9px;
+  }
+  .cnv-checkbox__text {
+    flex: 1;
+  }
+
+  .cnv-radio {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+  }
+  .cnv-radio__icon {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    border: 1px solid #333333;
+    box-sizing: border-box;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .cnv-radio__icon_active_yes {
+    display: none;
+  }
+  .cnv-radio__input {
+    position: absolute;
+    margin: 2px;
+    opacity: 0;
+    z-index: -1;
+  }
+  .cnv-radio__input:checked + .cnv-radio__button .cnv-radio__icon {
+    display: none;
+  }
+  .cnv-radio__input:checked + .cnv-radio__button .cnv-radio__icon_active_yes {
+    display: flex;
+  }
+  .cnv-radio__icon-inner {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  .cnv-radio__text {
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 600px),
+  only screen and (max-device-width: 600px) {
+  #cnv .cnv-display-mobile {
+    display: revert;
+  }
+  #cnv .cnv-display-desktop {
+    display: none;
+  }
+  #cnv .cnv-mobile-block {
+    display: block !important;
+  }
+  #cnv .cnv-mobile-block > div {
+    padding: 0 !important;
+  }
+}
