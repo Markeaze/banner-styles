@@ -90,8 +90,8 @@
 
 /* Banner animations */
 #cnv {
-  .cnv-animation.cnv-animation-running,
-  .cnv-animation.cnv-animation-running .cnv__card {
+  .cnv-animation.cnv-animation_running,
+  .cnv-animation.cnv-animation_running .cnv__card {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -221,6 +221,20 @@
       -moz-transform: translateX(200%);
       -ms-transform: translateX(200%);
       transform: translateX(200%);
+    }
+  }
+  &.cnv-animation_type_height {
+    overflow: hidden;
+    &.cnv-animation,
+    &.cnv-animation .cnv__card {
+      transition: none;
+      transition: max-height 500ms ease-in-out;
+    }
+    &:not(.cnv-animation_state_disabled) {
+      max-height: 0;
+    }
+    &.cnv-animation_state_active {
+      max-height: 50vh;
     }
   }
 }
